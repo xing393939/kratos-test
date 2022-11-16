@@ -1,5 +1,6 @@
 syntax = "proto3";
 package kratos.api;
+// protoc --proto_path=./internal --proto_path=./third_party --go_out=paths=source_relative:./internal internal/conf/conf.proto
 
 option go_package = "test/internal/conf;conf";
 
@@ -29,6 +30,8 @@ message Data {
   message Database {
     string driver = 1;
     string source = 2;
+    sint32 max_idle_conns = 3;
+    sint32 max_open_conns = 4;
   }
   message Redis {
     string network = 1;

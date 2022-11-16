@@ -19,6 +19,7 @@ type Data struct {
 
 func NewDBClient(conf *conf.Data, logger log.Logger) *gorm.DB {
 	db, err := gorm.Open(mysql.Open(conf.Database.Source), &gorm.Config{})
+	log.NewHelper(logger).Info(conf.Database)
 	if err != nil {
 		log.NewHelper(logger).Error("mysql")
 	}
