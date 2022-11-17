@@ -13,6 +13,7 @@ func NewGinServer(c *conf.Server, greeter *service.GreeterService, logger log.Lo
 	srv := gin.NewServer(
 		gin.WithAddress(c.Grpc.Addr),
 	)
+	srv.LoadHTMLGlob("templates/*")
 	srv.GET("/helloworld/:name", func(ctx *gin2.Context) {
 		var in v1.HelloRequest
 		in.Name = ctx.Param("name")
@@ -21,7 +22,7 @@ func NewGinServer(c *conf.Server, greeter *service.GreeterService, logger log.Lo
 			ctx.String(200, "err")
 			return
 		}
-		ctx.String(200, reply.Message)
+		ctx.HTML(200, "index.html", reply)
 	})
 	return srv
 }

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Kenmore User Manuals Download | ManualsLib</title>
+    <link rel="android-touch-icon" href="//static.manualslib.com/public/img/application.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description"
+          content="View & download of more than 16355 Kenmore PDF user manuals, service manuals, operating guides. Ranges, Refrigerator user manuals, operating guides & specifications">
+    <meta name="Keywords"
+          content="Kenmore user manuals, operating guides, download pdf manuals, Kenmore service manuals, installation and owner's manuals">
+    <link rel="preconnect" href="//static-data2.manualslib.com">
+    <link rel="preconnect" href="https://securepubads.g.doubleclick.net">
+    <link rel="stylesheet" href="/project/css/brand.css">
+    <script src="//static.manualslib.com/public/chunk.commons.ccd5.min.js" defer></script>
+    <script src="//static.manualslib.com/public/app.4226.min.js" id="appJs" defer></script>
+    <link rel="search" href="https://www.manualslib.com/opensearchdescription.xml"
+          type="application/opensearchdescription+xml" title="Search"/>
+    <link rel="preconnect" href="https://quantcast.mgr.consensu.org">
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="apple-touch-icon" href="/favicon-152.png">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/favicon-152.png">
+    <link rel="icon" href="/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="/image/vnd.microsoft.icon" href="/favicon-16.png">
+    <link rel="SHORTCUT ICON" href="/favicon.ico">
+</head>
+<body class="">
+<div id="wrap">
+    {{template "header" .}}
+    <div class="container-fluid main">
+        <div class="page_topper">
+            <div class="page_topperpad">
+
+                <div class="cover" style="opacity:.2;"></div>
+                <ol class="breadcrumb">
+                    <li><a href="/">Manuals</a></li>
+                    <li><a href="/brand/{{ .Brand }}">{{ .Brand }}</a></li>
+                </ol>
+                <h1 class="Uheader">{{ .Brand }}</h1>
+                <h2 class="mansminf">ManualsLib has more than 16355 Kenmore manuals </h2>
+            </div>
+        </div>
+
+        <div class="cathead">
+            <a href="/brand/{{ .Brand }}">{{ .Brand }}</a>
+        </div>
+        <section class="centerfluid">
+            <div class="row modelheader">
+                <div class="col-xs-3 col-sm-2">Models
+                    <svg class='icon icon-xs'>
+                        <use href="/public/img/solid.svg#power-off"></use>
+                    </svg>
+                </div>
+                <div class="col-xs-9 col-sm-10">Document Type
+                    <svg class='icon icon-xs'>
+                        <use href="/public/img/solid.svg#book"></use>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="category">
+                <div>
+                    {{ range .Products }}
+                    <div class="row tabled">
+                        <div class="col-xs-3 col-sm-2">
+                            <a href="/product/{{ $.Brand }}/{{ .Name }}-page1">{{ .Name }}</a>
+                        </div>
+                        <div class="col-xs-9 col-sm-10 manuals-col">
+                            <a href="/product/{{ $.Brand }}/{{ .Name }}-page1" title="{{ .Name }}">Owner's Manual</a>
+                        </div>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+        </section>
+     </div>
+    {{template "footer" .}}
+</div>
+</body>
+</html>
+
